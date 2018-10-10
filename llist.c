@@ -77,7 +77,7 @@ int main() {
   myNode5->next = 0;  // NULL
 
   /* * * * * * * * * * * * * * * * * * * * * * * *
-     TESTING insert_front(struct node * , int)
+     TESTING print_list(struct node *)
    * * * * * * * * * * * * * * * * * * * * * * * */
   
   print_list(myNode0);  // [1, 3, 5]
@@ -92,12 +92,27 @@ int main() {
   print_list( insert_front(myNode0, -1) );  // [-1, 1, 3, 5]
   print_list( insert_front(myNode3,  0) );  // [0, 2, 4, 6]
 
+  // branch list
+
+  print_list( insert_front(myNode4, 3) );   // [3, 4, 6]
+  /*
+    0
+     \
+       2 - 4 - 6
+          /
+	  3
+
+    myNode3 = 2
+    myNode4 = 4
+    myNode5 = 6
+   */
+
   /* * * * * * * * * * * * * * * * * * * * * * * *
      TESTING free_list(struct node *)
    * * * * * * * * * * * * * * * * * * * * * * * */ 
 
   free_list(myNode0);
-  printf("%d\n", myNode0->i);     // 0 / NULL
+  printf("%d\n", myNode0->i);     // 0? ( / NULL )
   printf("%p\n", myNode0->next);  // 0x?000000000000000
   //                                 NULL? is that you?
   // print_list(myNode0);  // seg fault
