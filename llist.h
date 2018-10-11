@@ -1,8 +1,7 @@
-
 // Raymond Wu
 // Systems pd10
 // Lab -- Linked List
-// 2018-10-10
+// 2018-10-11
 
 // struct prototype
 struct node {int i ; struct node *next ;};
